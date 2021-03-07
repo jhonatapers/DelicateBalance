@@ -1,0 +1,16 @@
+C:\Users\jhona\OneDrive\Documents\Workspace\DelicateBalance\bin\Debug\net5.0\DelicateBalance.exe
+C:\Users\jhona\OneDrive\Documents\Workspace\DelicateBalance\bin\Debug\net5.0\DelicateBalance.deps.json
+C:\Users\jhona\OneDrive\Documents\Workspace\DelicateBalance\bin\Debug\net5.0\DelicateBalance.runtimeconfig.json
+C:\Users\jhona\OneDrive\Documents\Workspace\DelicateBalance\bin\Debug\net5.0\DelicateBalance.runtimeconfig.dev.json
+C:\Users\jhona\OneDrive\Documents\Workspace\DelicateBalance\bin\Debug\net5.0\DelicateBalance.dll
+C:\Users\jhona\OneDrive\Documents\Workspace\DelicateBalance\bin\Debug\net5.0\ref\DelicateBalance.dll
+C:\Users\jhona\OneDrive\Documents\Workspace\DelicateBalance\bin\Debug\net5.0\DelicateBalance.pdb
+C:\Users\jhona\OneDrive\Documents\Workspace\DelicateBalance\obj\Debug\net5.0\DelicateBalance.csprojAssemblyReference.cache
+C:\Users\jhona\OneDrive\Documents\Workspace\DelicateBalance\obj\Debug\net5.0\DelicateBalance.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jhona\OneDrive\Documents\Workspace\DelicateBalance\obj\Debug\net5.0\DelicateBalance.AssemblyInfoInputs.cache
+C:\Users\jhona\OneDrive\Documents\Workspace\DelicateBalance\obj\Debug\net5.0\DelicateBalance.AssemblyInfo.cs
+C:\Users\jhona\OneDrive\Documents\Workspace\DelicateBalance\obj\Debug\net5.0\DelicateBalance.csproj.CoreCompileInputs.cache
+C:\Users\jhona\OneDrive\Documents\Workspace\DelicateBalance\obj\Debug\net5.0\DelicateBalance.dll
+C:\Users\jhona\OneDrive\Documents\Workspace\DelicateBalance\obj\Debug\net5.0\ref\DelicateBalance.dll
+C:\Users\jhona\OneDrive\Documents\Workspace\DelicateBalance\obj\Debug\net5.0\DelicateBalance.pdb
+C:\Users\jhona\OneDrive\Documents\Workspace\DelicateBalance\obj\Debug\net5.0\DelicateBalance.genruntimeconfig.cache

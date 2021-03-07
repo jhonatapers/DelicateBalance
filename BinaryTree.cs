@@ -1,15 +1,13 @@
 using System;
 class BinaryTree
 {
-    Node[] binaryTree;
-    
-    public Node[] makeTree(string[] nodes)
+    public static Node[] makeTree(string[] nodes)
     {
         try
         {
-            binaryTree = new Node[nodes.Length];
+            Node[] binaryTree = new Node[nodes.Length];
 
-            for(int i = 0; i >= nodes.Length - 1; i++)
+            for(int i = 0; i <= nodes.Length - 1; i++)
             {
                 string[] nodeInfo = nodes[i].Split(' ');
 
@@ -21,7 +19,7 @@ class BinaryTree
                 };
             }
 
-            return this.binaryTree;
+            return binaryTree;
         }
         catch(Exception makeTree)
         {

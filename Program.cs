@@ -6,7 +6,11 @@ namespace DelicateBalance
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            BalanceCalculator balanceCalculator = new BalanceCalculator();
+
+            balanceCalculator.setTree(BinaryTree.makeTree(Reader.readData("teste0.txt")));
+            
         }
     }
+
 }

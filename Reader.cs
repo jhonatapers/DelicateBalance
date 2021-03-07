@@ -1,10 +1,9 @@
 using System.Net;
 using System.IO;
-class Reader
+public class Reader
 {
-    public string[] readData(string arquivo)
+    public static string[] readData(string arquivo)
     {
-        string test = Directory.GetCurrentDirectory();
-        return System.IO.File.ReadAllLines(@test);
+        return System.IO.File.ReadAllLines(Directory.GetCurrentDirectory() + @"\casos\" + arquivo);
     }
 }
