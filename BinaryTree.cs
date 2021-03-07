@@ -2,8 +2,8 @@ using System;
 class BinaryTree
 {
     Node[] binaryTree;
-
-    public bool makeTree(string[] nodes)
+    
+    public Node[] makeTree(string[] nodes)
     {
         try
         {
@@ -15,18 +15,18 @@ class BinaryTree
 
                 binaryTree[i] = new Node
                 {
-                    Id = Convert.ToInt32(nodeInfo[0].Remove(0,1)),
+                    Id = Convert.ToInt64(nodeInfo[0].Remove(0,1)),
                     LValue = nodeInfo[1].StartsWith('X') ? -1 : Convert.ToInt32(nodeInfo[1]),
                     RValue = nodeInfo[1].StartsWith('X') ? -1 : Convert.ToInt32(nodeInfo[2])
                 };
             }
 
-            return true;
+            return this.binaryTree;
         }
         catch(Exception makeTree)
         {
             Console.WriteLine(makeTree.Message);
-            return false;
+            throw makeTree;
         }        
     }
 }
