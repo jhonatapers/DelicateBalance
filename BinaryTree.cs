@@ -13,7 +13,6 @@ class BinaryTree
 
                 binaryTree[i] = new Node
                 {
-                    Id = Convert.ToInt64(nodeInfo[0].Remove(0,1)),
                     LValue = nodeInfo[1].StartsWith('X') ? -1 : Convert.ToInt32(nodeInfo[1]),
                     RValue = nodeInfo[1].StartsWith('X') ? -1 : Convert.ToInt32(nodeInfo[2])
                 };
@@ -21,10 +20,9 @@ class BinaryTree
 
             return binaryTree;
         }
-        catch(Exception makeTree)
+        catch
         {
-            Console.WriteLine(makeTree.Message);
-            throw makeTree;
+            throw;
         }        
     }
 }

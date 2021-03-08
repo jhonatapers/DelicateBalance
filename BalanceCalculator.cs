@@ -16,29 +16,49 @@ class BalanceCalculator
 
     public void Start()
     {
-        if(this.tree is null)
-            calculateBalanced(0);
+        calculateBalanced(0);
+
+        Console.WriteLine(balancedCount + "Computadores: " + balancedIDs);
     }
 
     public void calculateBalanced(Int64 id)
     {
-        if(tree[id].LValue == -1) { calculateBalanced(id * 2 + 1); }
+        if(tree[id].LValue == -1) 
+        { 
+            calculateBalanced(id * 2 + 1);
+        }
 
-        if(tree[id].RValue == -1) { calculateBalanced(id * 2 + 2); }
+        if(tree[id].RValue == -1) 
+        { 
+            calculateBalanced(id * 2 + 2); 
+        }
         else
         {
-            if (tree[id].LValue == tree[id].RValue) { balancedCount++; balancedIDs = balancedIDs + ";X" + tree[id]; }
-            
-                if (id % 2 == 0 && tree[id].Id !=0) //par
+            if (tree[id].LValue == tree[id].RValue) 
+            { 
+                //GAMBIARRA
+                if(!balancedIDs.Contains(";X" + id))
                 {
-                    tree[tree[id].Id/2 -1].RValue = tree[id].LValue + tree[id].RValue;
-                    calculateBalanced(tree[id].Id/2 - 1);
+                    balancedCount++; 
+                    balancedIDs = balancedIDs + ";X" + id; 
                 }
-                else if(tree[id].Id !=0) //impar
+            }
+
+            if(id !=0)
+            {
+                if (id % 2 == 0) //par
                 {
-                    tree[tree[id].Id/2].LValue = tree[id].LValue + tree[id].RValue;
-                    calculateBalanced(tree[id].Id/2);
+                    tree[id/2 -1].RValue = tree[id].LValue + tree[id].RValue;
+                    calculateBalanced(id/2 - 1);
                 }
+                else //impar
+                {
+                    tree[id/2].LValue = tree[id].LValue + tree[id].RValue;
+                    calculateBalanced(id/2);
+                }
+            }
+
+            return;
         }   
     }
 
