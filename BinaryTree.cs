@@ -14,7 +14,7 @@ class BinaryTree
                 binaryTree[i] = new Node
                 {
                     LValue = nodeInfo[1].StartsWith('X') ? -1 : Convert.ToInt32(nodeInfo[1]),
-                    RValue = nodeInfo[1].StartsWith('X') ? -1 : Convert.ToInt32(nodeInfo[2])
+                    RValue = nodeInfo[1].StartsWith('X') ? -2 : Convert.ToInt32(nodeInfo[2])
                 };
             }
 

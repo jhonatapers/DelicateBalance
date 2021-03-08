@@ -8,7 +8,7 @@ namespace DelicateBalance
         {
             BalanceCalculator balanceCalculator = new BalanceCalculator();
 
-            balanceCalculator.setTree(BinaryTree.makeTree(Reader.readData("teste10.txt")));
+            balanceCalculator.setTree(BinaryTree.makeTree(Reader.readData("teste13.txt")));
             balanceCalculator.Start();
         }
     }

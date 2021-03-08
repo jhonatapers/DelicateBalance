@@ -18,31 +18,35 @@ class BalanceCalculator
     {
         calculateBalanced(0);
 
-        Console.WriteLine(balancedCount + "Computadores: " + balancedIDs);
+        Console.WriteLine("Em equilibrio: " +balancedCount + "\nComputadores: " + balancedIDs);
     }
 
     public void calculateBalanced(Int64 id)
-    {
+    {        
+        //GAMBIARRA
+        if(balancedIDs.Contains(";X" + id))
+        {
+            return;
+        }
+        
+        if (tree[id].LValue == tree[id].RValue) 
+        {                 
+            balancedCount++; 
+            balancedIDs = balancedIDs + ";X" + id;                 
+        }
+
+            
         if(tree[id].LValue == -1) 
         { 
             calculateBalanced(id * 2 + 1);
         }
 
-        if(tree[id].RValue == -1) 
+        if(tree[id].RValue == -2) 
         { 
             calculateBalanced(id * 2 + 2); 
         }
         else
         {
-            if (tree[id].LValue == tree[id].RValue) 
-            { 
-                //GAMBIARRA
-                if(!balancedIDs.Contains(";X" + id))
-                {
-                    balancedCount++; 
-                    balancedIDs = balancedIDs + ";X" + id; 
-                }
-            }
 
             if(id !=0)
             {
@@ -57,8 +61,6 @@ class BalanceCalculator
                     calculateBalanced(id/2);
                 }
             }
-
-            return;
         }   
     }
 
