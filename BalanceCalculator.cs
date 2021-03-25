@@ -1,9 +1,16 @@
+using System.Diagnostics;
+using System.Globalization;
+using System.Runtime.CompilerServices;
 using System;
 class BalanceCalculator
 {
     Node[] tree;
 
     int balancedCount;
+
+    private double op;
+    private int chamadas;
+    private double n;
 
     string balancedIDs;
 
@@ -16,9 +23,27 @@ class BalanceCalculator
 
     public void Start()
     {
-        calculateBalanced(0);
+        this.op = 0;
+        chamadas = -1;
+        n = tree.Length-1;
 
-        Console.WriteLine("Em equilibrio: " +balancedCount + "\nComputadores: " + balancedIDs);
+        calculateBalanced3(0);
+    
+        Console.WriteLine("Em equilibrio: " +balancedCount);
+        Console.WriteLine("Computadores: " + balancedIDs);
+
+        //Console.WriteLine("Chamadas: " + chamadas);
+
+        //Console.WriteLine(n + " " + op);
+        //Console.WriteLine(n);
+        //Console.WriteLine(op);
+        /*
+        Console.WriteLine("   ");
+        Console.WriteLine("N: " + n);
+        Console.WriteLine("Operações: " + op);
+        Console.WriteLine("Calculo: " + op/n);
+        */
+        
     }
 
     public void calculateBalanced(Int64 id)
@@ -28,26 +53,26 @@ class BalanceCalculator
         {
             return;
         }
-        
+
         if (tree[id].LValue == tree[id].RValue) 
         {                 
             balancedCount++; 
             balancedIDs = balancedIDs + ";X" + id;                 
         }
 
-            
         if(tree[id].LValue == -1) 
         { 
+            //TENTAR RETORNAR O VALOR AQUI
             calculateBalanced(id * 2 + 1);
         }
 
         if(tree[id].RValue == -2) 
         { 
+            //TENTAR RETORNAR O VALOR AQUI
             calculateBalanced(id * 2 + 2); 
         }
         else
         {
-
             if(id !=0)
             {
                 if (id % 2 == 0) //par
@@ -62,6 +87,67 @@ class BalanceCalculator
                 }
             }
         }   
+    }
+
+    public Int64 calculateBalanced2(Int64 id)
+    {          
+        if(tree[id].LValue == -1) 
+        { 
+            tree[id].LValue = calculateBalanced2(id * 2 + 1);
+        }
+
+        if(tree[id].RValue == -2) 
+        { 
+            tree[id].RValue = calculateBalanced2(id * 2 + 2); 
+        }
+        else
+        {
+            if (tree[id].LValue == tree[id].RValue) 
+            {                 
+                balancedCount++; 
+                balancedIDs = balancedIDs + ";X" + id;                 
+            }            
+        }  
+
+        if(id == 0)
+        {
+            if (tree[id].LValue == tree[id].RValue) 
+            {                 
+                balancedCount++; 
+                balancedIDs = balancedIDs + ";X" + id;                 
+            }   
+        }            
+
+        return tree[id].LValue + tree[id].RValue;
+
+    }
+
+    public Int64 calculateBalanced3(Int64 id)
+    { 
+        this.chamadas++;
+        this.op++;
+        if(tree[id].LValue == -1) 
+        { 
+            op++;
+            tree[id].LValue = calculateBalanced3(id * 2 + 1);
+        }
+
+        this.op++;
+        if(tree[id].RValue == -2) 
+        { 
+            this.op++;
+            tree[id].RValue = calculateBalanced3(id * 2 + 2); 
+        }
+
+        this.op++;
+        if (tree[id].LValue == tree[id].RValue) 
+        {              
+            balancedCount++; 
+            balancedIDs = balancedIDs + ";X" + id;                              
+        }
+
+        this.op++;
+        return tree[id].LValue + tree[id].RValue;
     }
 
 }
