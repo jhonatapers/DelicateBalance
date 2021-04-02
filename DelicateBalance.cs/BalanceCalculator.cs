@@ -23,27 +23,17 @@ class BalanceCalculator
 
     public void Start()
     {
-        this.op = 0;
+        this.op = -1;
         chamadas = -1;
         n = tree.Length-1;
 
         calculateBalanced3(0);
-    
+
+        Console.WriteLine("N: " + n);
+        Console.WriteLine("Operações: " + op + "   Op/N: " + op/n);
+        
         Console.WriteLine("Em equilibrio: " +balancedCount);
         Console.WriteLine("Computadores: " + balancedIDs);
-
-        //Console.WriteLine("Chamadas: " + chamadas);
-
-        //Console.WriteLine(n + " " + op);
-        //Console.WriteLine(n);
-        //Console.WriteLine(op);
-        /*
-        Console.WriteLine("   ");
-        Console.WriteLine("N: " + n);
-        Console.WriteLine("Operações: " + op);
-        Console.WriteLine("Calculo: " + op/n);
-        */
-        
     }
 
     public void calculateBalanced(Int64 id)
@@ -125,28 +115,28 @@ class BalanceCalculator
     public Int64 calculateBalanced3(Int64 id)
     { 
         this.chamadas++;
-        this.op++;
+        //this.op++;
         if(tree[id].LValue == -1) 
         { 
             op++;
             tree[id].LValue = calculateBalanced3(id * 2 + 1);
         }
 
-        this.op++;
+        //this.op++;
         if(tree[id].RValue == -2) 
         { 
             this.op++;
             tree[id].RValue = calculateBalanced3(id * 2 + 2); 
         }
 
-        this.op++;
+        //this.op++;
         if (tree[id].LValue == tree[id].RValue) 
         {              
             balancedCount++; 
             balancedIDs = balancedIDs + ";X" + id;                              
         }
 
-        this.op++;
+        //this.op++;
         return tree[id].LValue + tree[id].RValue;
     }
 
