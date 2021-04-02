@@ -6,6 +6,7 @@ balancedComputers = ''
 op = 0
 
 //teste
+//teste2
 
 def makeTree(fileName):
     global tree
